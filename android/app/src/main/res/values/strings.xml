@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">pokevicente</string>
+    <string name="title_activity_main">pokevicente</string>
+    <string name="package_name">com.pokevicente.app</string>
+    <string name="custom_url_scheme">com.pokevicente.app</string>
+</resources>
