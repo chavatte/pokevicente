@@ -30,10 +30,18 @@ export default function HelpCenter({ onClose }: HelpCenterProps) {
               Quem é esse?
             </h3>
           </div>
-          <p className="text-blue-100 font-pokemon-gb text-[12px] leading-relaxed">
-            Olhe a sombra e adivinhe o nome do Pokémon. Se você acertar, ele é
-            capturado e vai direto para a sua Mochila!
+          <p className="text-blue-100 font-pokemon-gb text-[12px] leading-relaxed mb-3">
+            Olhe a sombra e adivinhe o nome. Acertar de primeira rende mais{" "}
+            <span className="text-yellow-400 font-bold">MasterCoins (🪙)</span>{" "}
+            e inicia um <strong>Combo</strong>!
           </p>
+          <ul className="text-blue-200 font-pokemon-gb text-[10px] leading-relaxed space-y-2 ml-2 border-l-2 border-blue-400 pl-3">
+            <li>🔥 Acertos de 1ª dão bônus de Combo!</li>
+            <li>❌ Errar 3 vezes no mesmo Pokémon faz você perder moedas.</li>
+            <li>
+              🏃‍♂️ Use "Fugir" se não souber (perde o Combo, mas não as moedas).
+            </li>
+          </ul>
         </div>
         <div className="bg-green-900/50 border-2 border-green-500 rounded-2xl p-4 shadow-md">
           <div className="flex items-center gap-3 mb-2">
@@ -54,11 +62,22 @@ export default function HelpCenter({ onClose }: HelpCenterProps) {
               Super Trunfo
             </h3>
           </div>
-          <p className="text-red-100 font-pokemon-gb text-[12px] leading-relaxed">
-            A arena de batalha! Escolha um lutador da sua Mochila. O jogo vai
-            sortear um atributo (como Ataque ou Velocidade). Quem tiver o número
-            maior, vence a luta!
+          <p className="text-red-100 font-pokemon-gb text-[12px] leading-relaxed mb-3">
+            A arena de aposta! Escolha um lutador da Mochila. O jogo sorteia um
+            atributo para a batalha.
           </p>
+          <ul className="text-red-200 font-pokemon-gb text-[10px] leading-relaxed space-y-2 ml-2 border-l-2 border-red-400 pl-3">
+            <li>
+              🏆 <strong>Vitória:</strong> Ganhe +20 MasterCoins.
+            </li>
+            <li>
+              💀 <strong>Derrota:</strong> Perca -15 MasterCoins.
+            </li>
+            <li>
+              💸 <strong>Atenção:</strong> É preciso ter no mínimo 1 MasterCoin
+              para entrar na Arena!
+            </li>
+          </ul>
         </div>
         <div className="bg-purple-900/50 border-2 border-purple-500 rounded-2xl p-4 shadow-md">
           <div className="flex items-center gap-3 mb-2">
@@ -82,9 +101,9 @@ export default function HelpCenter({ onClose }: HelpCenterProps) {
           <p className="text-orange-100 font-pokemon-gb text-[12px] leading-relaxed">
             Não perca o seu progresso! No menu principal, clique em "
             <strong>EXPORTAR</strong>" para criar o seu Cartucho VIP (um arquivo
-            seguro com final <strong>.pkv</strong>). Para continuar jogando em
-            outro celular, basta clicar em "<strong>IMPORTAR</strong>" e
-            selecionar o seu cartucho!
+            seguro com final <strong>.pkv</strong>) que guarda seus Pokémons e
+            suas moedas. Para continuar jogando em outro celular, basta clicar
+            em "<strong>IMPORTAR</strong>" e selecionar o seu cartucho!
           </p>
         </div>
         <button
