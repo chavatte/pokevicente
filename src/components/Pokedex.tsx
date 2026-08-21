@@ -2,13 +2,16 @@ import { useState, useEffect } from "react";
 import { fetchGenerationList, GENERATIONS } from "../services/pokeApi";
 import PokemonModal from "./PokemonModal";
 
+const getLocalData = () => {
+  const newSave = localStorage.getItem("vicente-save");
+  if (newSave) return JSON.parse(newSave).pokedex;
+  const oldSave = localStorage.getItem("vicente-pokedex");
+  return oldSave ? JSON.parse(oldSave) : [];
+};
+
 export default function Pokedex() {
   const [activeTab, setActiveTab] = useState(GENERATIONS[0]);
-  const [capturedIds] = useState<number[]>(() => {
-    const savedPokedex = localStorage.getItem("vicente-pokedex");
-    return savedPokedex ? JSON.parse(savedPokedex) : [];
-  });
-
+  const [capturedIds] = useState<number[]>(getLocalData());
   const [allPokemon, setAllPokemon] = useState<{ id: number; name: string }[]>(
     [],
   );
@@ -65,7 +68,6 @@ export default function Pokedex() {
           {GENERATIONS.map((gen, index) => {
             const unlocked = isGenUnlocked(index);
             const isActive = activeTab.id === gen.id;
-
             return (
               <button
                 key={gen.id}
@@ -121,7 +123,6 @@ export default function Pokedex() {
           )}
         </div>
       </div>
-
       {selectedPokemonId && (
         <PokemonModal
           id={selectedPokemonId}

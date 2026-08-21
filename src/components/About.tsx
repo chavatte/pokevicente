@@ -23,7 +23,7 @@ export default function About({ onClose }: AboutProps) {
           className="w-48 h-auto drop-shadow-md mb-3"
         />
         <span className="bg-green-600 border-2 border-green-400 text-white font-pokemon-gb text-[12px] px-4 py-2 rounded-full shadow-[0_0_15px_rgba(34,197,94,0.4)] animate-pulse">
-          VERSÃO 2.0
+          VERSÃO 2.5
         </span>
       </div>
       <div className="space-y-4">
@@ -39,25 +39,42 @@ export default function About({ onClose }: AboutProps) {
         </div>
         <div className="bg-blue-900/50 border-2 border-blue-500 rounded-2xl p-5 shadow-md text-center">
           <h3 className="text-yellow-400 font-pokemon-solid text-xl mb-4">
-            Novidades da v2.0
+            Novidades da v2.5
           </h3>
-          <ul className="text-blue-100 font-pokemon-gb text-[10px] leading-relaxed space-y-5 text-left">
+          <ul className="text-blue-100 font-pokemon-gb text-[10px] leading-relaxed space-y-4 text-left">
             <li className="flex items-start gap-3">
-              <span className="text-xl">🌟</span>
+              <span className="text-xl shrink-0 leading-none mt-0.5">🌟</span>
               <span>
                 <span className="text-white">O MUNDO EXPANDIU:</span> Suporte
                 completo a todas as 9 gerações (1025 Pokémons).
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-xl">💾</span>
+              <span className="text-xl shrink-0 leading-none mt-0.5">💰</span>
               <span>
-                <span className="text-white">MOTOR DE SAVE:</span> Novo sistema
-                de Cartuchos VIP criptografados (.PKV).
+                <span className="text-white">ECONOMIA E COMBOS:</span> Novo
+                sistema de MasterCoins. Acerte em sequência para ganhar bônus ou
+                fuja para não perder suas moedas!
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-xl">🚀</span>
+              <span className="text-xl shrink-0 leading-none mt-0.5">⚔️</span>
+              <span>
+                <span className="text-white">ARENA DE APOSTAS:</span> O Super
+                Trunfo agora vale moedas (exige no mínimo 1 MasterCoin para
+                lutar). Vença a CPU para lucrar, perca e sofra o prejuízo!
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-xl shrink-0 leading-none mt-0.5">💾</span>
+              <span>
+                <span className="text-white">NOVO MOTOR DE SAVE:</span> Os
+                Cartuchos VIP (.PKV) agora guardam com segurança sua Mochila e
+                sua carteira de MasterCoins.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-xl shrink-0 leading-none mt-0.5">🚀</span>
               <span>
                 <span className="text-white">PERFORMANCE:</span> IA dinâmica de
                 carregamento de imagens e otimização de interface.

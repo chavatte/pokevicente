@@ -6,7 +6,7 @@
 
 <div align="center">
 
-# 🎮 PokéVicente v2.0 - Trainer's Hub
+# 🎮 PokéVicente v2.5 - Trainer's Hub
 
 <img src="./public/pokevicente_splashscreen.png" alt="PokéVicente - Trainer's Hub" style="margin: 20px;">
 
@@ -26,18 +26,18 @@ A hybrid application (Web/Android) built to hunt, battle, and collect Pokémon. 
 
 ### 📖 The Project (Overview)
 
-**PokéVicente v2.0** is more than just an app; it's a classic video game experience brought to modern days. It was designed to be a fun and interactive tool where users can guess Pokémon by their silhouettes, collect up to **1025 Pokémon across all 9 generations** in a virtual backpack, battle in a "Top Trumps" arena, and browse a complete encyclopedia.
+**PokéVicente v2.5** is more than just an app; it's a classic video game experience brought to modern days. It was designed to be a fun and interactive tool where users can guess Pokémon by their silhouettes, collect up to **1025 Pokémon across all 9 generations** in a virtual backpack, bet their coins in a "Top Trumps" arena, and browse a complete encyclopedia.
 
-*   **For gamers:** A complete mobile game that doesn't rely entirely on the internet for its core mechanics. You catch Pokémon and can save your progress in a secure file so you never lose your collection!
+*   **For gamers:** A complete mobile game that doesn't rely entirely on the internet for its core mechanics. You catch Pokémon, manage your MasterCoins economy, and can save your progress in a secure file so you never lose your collection!
 *   **For developers:** A high-performance *Single Page Application* (SPA). It uses state-based conditional rendering for navigation (avoiding complex routing libraries) and caches resources. It is wrapped by the Android *WebView* via Capacitor to generate a native `.apk` without relying on Android Studio.
 
 ### ✨ Features
 
-*   🔍 **Who's that Pokémon?:** A silhouette-guessing minigame to capture new monsters.
+*   🔍 **Who's that Pokémon?:** A silhouette-guessing minigame. Guess correctly on the first try to build a **Combo** and earn bonus **MasterCoins**. Don't know it? Use the "Flee" button to protect your coins!
 *   🎒 **Backpack (Local Pokédex):** An offline inventory displaying captured Pokémon across 9 regions, their combat stats, and evolution trees.
-*   ⚔️ **Top Trumps (Arena):** A battle system against the CPU (AI) comparing base *Stats* (Attack, Defense, Speed, etc.).
+*   ⚔️ **Top Trumps (Arena):** A betting battle system against the CPU (AI). It requires MasterCoins to enter; win to multiply your coins, or lose and take the hit!
 *   📚 **Poké Wiki:** A global encyclopedia with virtual pagination for querying data via PokéAPI.
-*   💾 **Cartridge System (Save State):** Export and import progress via custom `.pkv` files (Base64 encrypted VIP cartridges ensuring local data immutability and anti-cheat protection).
+*   💾 **Cartridge System (Save State):** Export and import progress via custom `.pkv` files (Base64 encrypted VIP cartridges ensuring local data immutability for your Pokédex and MasterCoins wallet).
 
 ### 🛠 Technologies & Architecture
 
@@ -124,24 +124,24 @@ Um aplicativo híbrido (Web/Android) desenvolvido para caçar, batalhar e coleci
 
 ### 📖 O Projeto (Visão Geral)
 
-O **PokéVicente v2.0** não é apenas um app, é uma experiência de videogame clássico trazida para os dias de hoje. Ele foi desenhado para ser uma ferramenta divertida e interativa, onde o usuário pode adivinhar Pokémons pela silhueta, colecionar até **1025 Pokémons de todas as 9 gerações** em uma mochila virtual, batalhar em uma arena de "Super Trunfo" e consultar uma enciclopédia completa.
+O **PokéVicente v2.5** não é apenas um app, é uma experiência de videogame clássico trazida para os dias de hoje. Ele foi desenhado para ser uma ferramenta divertida e interativa, onde o usuário pode adivinhar Pokémons pela silhueta, colecionar até **1025 Pokémons de todas as 9 gerações** em uma mochila virtual, apostar suas moedas em uma arena de "Super Trunfo" e consultar uma enciclopédia completa.
 
-- **Para os jogadores:** É um jogo de celular completo que não precisa de internet para as mecânicas principais, onde você caça Pokémons e pode salvar seu progresso em um arquivo seguro para nunca perder sua coleção!
+- **Para os jogadores:** É um jogo de celular completo que não precisa de internet para as mecânicas principais, onde você caça Pokémons, gerencia sua economia de MasterCoins e pode salvar seu progresso em um arquivo seguro para nunca perder sua coleção!
     
 - **Para os desenvolvedores:** É uma _Single Page Application_ (SPA) de alta performance. Utiliza renderização condicional baseada em estado para navegação (sem bibliotecas complexas de roteamento) e faz o cache de recursos, sendo envelopada pela _WebView_ do Android via Capacitor para gerar um `.apk` nativo sem depender do Android Studio.
     
 
 ### ✨ Funcionalidades
 
-- 🔍 **Quem é esse Pokémon?:** Minigame de adivinhação por silhueta para capturar novos monstros.
+- 🔍 **Quem é esse Pokémon?:** Minigame de adivinhação. Acerte de primeira para criar um **Combo** e multiplicar suas **MasterCoins**. Não sabe qual é? Use o botão "Fugir" para proteger suas moedas (mas perder o combo).
     
 - 🎒 **Mochila (Pokédex Local):** Um inventário offline que exibe os Pokémons capturados através das 9 regiões, suas estatísticas de combate e árvores de evolução.
     
-- ⚔️ **Super Trunfo (Arena):** Sistema de batalha contra a CPU (Inteligência Artificial) comparando _Stats_ base (Ataque, Defesa, Velocidade, etc).
+- ⚔️ **Super Trunfo (Arena):** Sistema de batalha com apostas contra a CPU. Exige MasterCoins para participar; vença para lucrar, ou perca e sofra o prejuízo financeiro!
     
 - 📚 **Poké Wiki:** Enciclopédia global com paginação virtual para consulta de dados via PokéAPI.
     
-- 💾 **Sistema de Cartucho (Save State):** Exportação e importação de progresso via arquivos exclusivos `.pkv` (Cartuchos VIP ofuscados em Base64, garantindo imutabilidade de dados local e proteção anti-cheat).
+- 💾 **Sistema de Cartucho (Save State):** Exportação e importação de progresso via arquivos exclusivos `.pkv` (Cartuchos VIP ofuscados em Base64, garantindo imutabilidade de dados local da sua Mochila e carteira de MasterCoins).
     
 
 ### 🛠 Tecnologias e Arquitetura

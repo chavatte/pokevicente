@@ -1,19 +1,32 @@
+import { useState } from "react";
+
 type PortalProps = {
   onNavigate: (
     screen: "whosThat" | "superTrunfo" | "pokedex" | "wiki" | "help" | "about",
   ) => void;
 };
 
-export default function Portal({ onNavigate }: PortalProps) {
-  const handleExportSave = () => {
-    const savedData = localStorage.getItem("vicente-pokedex");
+const getLocalData = () => {
+  const newSave = localStorage.getItem("vicente-save");
+  if (newSave) return JSON.parse(newSave);
+  const oldSave = localStorage.getItem("vicente-pokedex");
+  const migrated = { pokedex: oldSave ? JSON.parse(oldSave) : [], score: 0 };
+  localStorage.setItem("vicente-save", JSON.stringify(migrated));
+  return migrated;
+};
 
-    if (!savedData) {
+export default function Portal({ onNavigate }: PortalProps) {
+  const [saveData] = useState(getLocalData());
+
+  const handleExportSave = () => {
+    const rawSave = localStorage.getItem("vicente-save");
+
+    if (!rawSave || saveData.pokedex.length === 0) {
       alert("Sua mochila ainda está vazia! Capture alguns Pokémons primeiro.");
       return;
     }
 
-    const encodedData = btoa(savedData);
+    const encodedData = btoa(rawSave);
     const blob = new Blob([encodedData], { type: "application/octet-stream" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -34,21 +47,30 @@ export default function Portal({ onNavigate }: PortalProps) {
       try {
         const encoded = e.target?.result as string;
         const json = atob(encoded);
-        JSON.parse(json);
-        localStorage.setItem("vicente-pokedex", json);
-        alert("Cartucho VIP carregado com sucesso! A página vai recarregar.");
-        window.location.reload();
+        const data = JSON.parse(json);
+
+        if (data.pokedex && typeof data.score === "number") {
+          localStorage.setItem("vicente-save", json);
+          alert("Cartucho VIP carregado com sucesso! A página vai recarregar.");
+          window.location.reload();
+        } else {
+          throw new Error("Invalid structure");
+        }
       } catch (error) {
-        alert("Ops! Cartucho corrompido ou inválido. Use um arquivo .pkv original do jogo.");
+        alert(
+          "Ops! Cartucho corrompido ou inválido. Use um arquivo .pkv original do jogo.",
+        );
       }
     };
     reader.readAsText(file);
   };
 
   return (
-    <div className="flex flex-col items-center justify-start h-full w-full max-w-md px-5 pt-8 pb-32 overflow-y-auto scroll-smooth">
-
+    <div className="flex flex-col items-center justify-start h-full w-full max-w-md px-5 pt-8 pb-24 overflow-y-auto scroll-smooth">
       <div className="flex flex-col items-center mb-6 relative w-full shrink-0">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-slate-800 border-2 border-yellow-500 text-yellow-400 px-4 py-2 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.5)] z-50 flex items-center justify-center font-pokemon-gb text-[16px] whitespace-nowrap">
+          💰 MasterCoins: {saveData.score}
+        </div>
         <button
           onClick={() => onNavigate("help")}
           className="absolute top-0 right-0 bg-slate-800 border-2 border-slate-500 text-slate-300 w-10 h-10 rounded-full shadow-[0_0_15px_rgba(0,0,0,0.5)] active:scale-90 transition-all hover:bg-slate-700 hover:border-yellow-400 z-50 flex items-center justify-center group"
@@ -58,13 +80,13 @@ export default function Portal({ onNavigate }: PortalProps) {
             ?
           </span>
         </button>
-        <div className="absolute top-10 w-48 h-48 bg-blue-500/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
+        <div className="absolute top-24 w-48 h-48 bg-blue-500/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
         <img
           src="/vicente-trainer.png"
           alt="Mestre Vicente"
-          className="w-40 h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)] hover:scale-105 transition-transform duration-500 z-10"
+          className="w-40 h-auto mt-20 drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)] hover:scale-105 transition-transform duration-500 z-10"
         />
-        <div className="flex flex-col items-center bg-slate-800/90 px-8 py-4 rounded-3xl border-4 border-slate-600 shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-md -mt-24 z-20">
+        <div className="flex flex-col items-center bg-slate-800/90 px-8 py-4 rounded-3xl border-4 border-slate-600 shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-md -mt-20 z-20">
           <img
             src="/pokevicente_logo.png"
             alt="Logo PokéVicente"
@@ -75,7 +97,6 @@ export default function Portal({ onNavigate }: PortalProps) {
           </p>
         </div>
       </div>
-
       <div className="flex flex-col w-full gap-4 shrink-0">
         <button
           onClick={() => onNavigate("whosThat")}
@@ -142,7 +163,8 @@ export default function Portal({ onNavigate }: PortalProps) {
           </h3>
         </div>
         <p className="text-slate-300 font-pokemon-gb text-[10px] text-center mb-5 leading-relaxed z-10 relative">
-          Seus dados estão protegidos no formato exclusivo PokéVicente! Salve antes de trocar de celular.
+          Seus dados estão protegidos no formato exclusivo PokéVicente! Salve
+          antes de trocar de celular.
         </p>
         <div className="flex gap-4 z-10 relative">
           <button
@@ -166,9 +188,9 @@ export default function Portal({ onNavigate }: PortalProps) {
       </div>
       <button
         onClick={() => onNavigate("about")}
-        className="mt-8 mb-8 text-slate-400 font-pokemon-gb text-[15px] hover:text-yellow-400 transition-colors active:scale-95 shrink-0"
+        className="mt-8 mb-4 px-6 py-3 bg-slate-800/80 border-2 border-slate-600 rounded-full text-slate-200 font-pokemon-gb text-[10px] shadow-[0_0_10px_rgba(0,0,0,0.3)] backdrop-blur-md hover:bg-slate-700 hover:border-yellow-500 hover:text-yellow-400 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] transition-all active:scale-95 shrink-0"
       >
-        PokéVicente v2.0 • Sobre o Projeto
+        PokéVicente v2.5 • Sobre o Projeto
       </button>
     </div>
   );
