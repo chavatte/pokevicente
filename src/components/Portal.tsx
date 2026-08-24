@@ -97,7 +97,35 @@ export default function Portal({ onNavigate }: PortalProps) {
           </p>
         </div>
       </div>
+      <div className="w-full bg-slate-900/80 border-l-4 border-cyan-500 rounded-r-2xl p-5 mb-6 shadow-[0_0_15px_rgba(6,182,212,0.2)] relative overflow-hidden shrink-0 animate-fade-in">
+        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] pointer-events-none"></div>
+        <p className="text-cyan-100 font-pokemon-gb text-[12px] leading-loose text-center relative z-10">
+          <span className="text-cyan-400 animate-pulse">
+            CONEXÃO ESTABELECIDA.{" "}
+          </span>
+          Preparado para aprender e jogar? Resolva os desafios, conquiste
+          MasterCoins e forme o deck mais forte da Arena. Mostre que você é um
+          verdadeiro Mestre Pokémon!
+        </p>
+      </div>
       <div className="flex flex-col w-full gap-4 shrink-0">
+        <button
+          onClick={() => onNavigate("pokedex")}
+          className="relative bg-green-600 border-b-8 border-green-800 text-white p-5 rounded-2xl shadow-xl active:scale-95 transition-all overflow-hidden group flex items-center justify-between"
+        >
+          <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
+          <div className="flex flex-col text-left">
+            <span className="block font-pokemon-solid text-xl text-yellow-400 drop-shadow-md mb-2">
+              Mochila
+            </span>
+            <span className="font-pokemon-gb text-[10px] text-green-200">
+              Sua coleção local!
+            </span>
+          </div>
+          <span className="text-3xl opacity-80 group-hover:scale-125 transition-transform">
+            🎒
+          </span>
+        </button>
         <button
           onClick={() => onNavigate("whosThat")}
           className="relative bg-blue-600 border-b-8 border-blue-800 text-white p-5 rounded-2xl shadow-xl active:scale-95 transition-all overflow-hidden group flex items-center justify-between"
@@ -190,7 +218,7 @@ export default function Portal({ onNavigate }: PortalProps) {
         onClick={() => onNavigate("about")}
         className="mt-8 mb-4 px-6 py-3 bg-slate-800/80 border-2 border-slate-600 rounded-full text-slate-200 font-pokemon-gb text-[10px] shadow-[0_0_10px_rgba(0,0,0,0.3)] backdrop-blur-md hover:bg-slate-700 hover:border-yellow-500 hover:text-yellow-400 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] transition-all active:scale-95 shrink-0"
       >
-        PokéVicente v2.5 • Sobre o Projeto
+        PokéVicente v3.1 • Sobre o Projeto
       </button>
     </div>
   );
