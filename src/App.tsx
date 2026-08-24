@@ -54,7 +54,7 @@ export default function App() {
 
   return (
     <div className="min-h-[100dvh] w-full flex justify-center bg-pokemon-pattern">
-      <main className="h-[100dvh] w-full max-w-md bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-slate-950 flex flex-col relative overflow-hidden shadow-2xl sm:border-x sm:border-slate-800">
+      <main className="h-[100dvh] w-full max-w-md md:max-w-4xl lg:max-w-6xl bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-slate-950 flex flex-col relative overflow-hidden shadow-2xl sm:border-x sm:border-slate-800">
         {showSplash ? (
           <SplashScreen />
         ) : (
@@ -115,7 +115,7 @@ export default function App() {
                 </div>
               </div>
             )}
-            <nav className="absolute bottom-0 w-full bg-slate-800 border-t-4 border-slate-950 flex justify-around p-3 z-50 rounded-t-3xl shadow-[0_-5px_20px_rgba(0,0,0,0.5)]">
+            <nav className="absolute bottom-0 w-full bg-slate-800 border-t-4 border-slate-950 flex justify-around p-3 z-50 rounded-t-3xl shadow-[0_-5px_20px_rgba(0,0,0,0.5)] md:px-24 lg:px-48">
               <button
                 onClick={() => {
                   setShowGameModal(false);

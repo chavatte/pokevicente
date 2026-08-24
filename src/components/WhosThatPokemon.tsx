@@ -149,7 +149,7 @@ export default function WhosThatPokemon() {
 
   if (!targetPokemon) {
     return (
-      <div className="text-white text-xl animate-pulse font-pokemon-gb mt-10">
+      <div className="text-white text-xl md:text-3xl animate-pulse font-pokemon-gb mt-10 md:mt-20 text-center">
         Procurando Pokémon...
       </div>
     );
@@ -159,39 +159,41 @@ export default function WhosThatPokemon() {
     targetPokemon.sprites.other["official-artwork"].front_default;
 
   return (
-    <div className="flex flex-col items-center w-full max-w-md pb-10">
-      <div className="w-full flex justify-between items-center mb-6 px-6 bg-slate-800/80 rounded-2xl py-3 border border-slate-700 shadow-md font-pokemon-gb text-xs">
-        <div className="flex flex-col">
-          <div className="absolute top-3 left-3 bg-slate-800 border-2 border-yellow-500 text-yellow-400 px-3 py-2 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.5)] z-50 flex items-center justify-center font-pokemon-gb text-[12px]">
+    <div className="flex flex-col items-center w-full max-w-md md:max-w-2xl lg:max-w-4xl pb-10 mx-auto animate-fade-in-up md:pt-6">
+      <div className="w-full flex justify-between items-center mb-6 md:mb-10 px-4 md:px-8 bg-slate-800/80 rounded-2xl py-4 border border-slate-700 shadow-md font-pokemon-gb text-xs md:text-sm">
+        <div className="flex flex-col items-start gap-2">
+          <div className="bg-slate-800 border-2 border-yellow-500 text-yellow-400 px-3 py-2 md:px-4 md:py-3 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.5)] flex items-center justify-center font-pokemon-gb text-[10px] md:text-[12px]">
             💰 MasterCoins: {saveData.score}
           </div>
           {streak > 1 && (
-            <span className="text-orange-400 mt-1 animate-pulse">
+            <span className="text-orange-400 animate-pulse text-[10px] md:text-[12px] ml-1">
               🔥 Combo {streak}x
             </span>
           )}
         </div>
-        <div className="flex flex-col items-end">
-          <span className="text-slate-400">Mochila {currentGen.name}</span>
-          <span className="text-green-400 mt-1">
+        <div className="flex flex-col items-end gap-1">
+          <span className="text-slate-400 text-[9px] md:text-[11px]">
+            Mochila {currentGen.name}
+          </span>
+          <span className="text-green-400 mt-1 md:mt-2 text-[10px] md:text-[12px]">
             🎒 {caughtInCurrentGen}/{currentGen.total}
           </span>
         </div>
       </div>
-      <h2 className="text-xl text-yellow-400 font-pokemon-solid text-center mb-6 drop-shadow-md px-2">
+      <h2 className="text-xl md:text-3xl text-yellow-400 font-pokemon-solid text-center mb-6 md:mb-8 drop-shadow-md px-2">
         {message}
       </h2>
-      <div className="relative w-64 h-64 bg-slate-800 rounded-full border-4 border-slate-700 flex items-center justify-center mb-8 overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+      <div className="relative w-64 h-64 md:w-80 md:h-80 bg-slate-800 rounded-full border-4 border-slate-700 flex items-center justify-center mb-8 md:mb-10 overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-700 to-transparent opacity-50"></div>
         <img
           src={imageUrl}
           alt="Pokémon Misterioso"
-          className={`w-48 h-48 object-contain transition-all duration-700 ease-in-out z-10 
+          className={`w-48 h-48 md:w-64 md:h-64 object-contain transition-all duration-700 ease-in-out z-10 
             ${isRevealed ? "brightness-100 scale-110 drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]" : "brightness-0 contrast-200"}`}
           draggable="false"
         />
       </div>
-      <div className="grid grid-cols-2 gap-4 w-full px-4 mb-6">
+      <div className="grid grid-cols-2 gap-4 md:gap-6 w-full md:w-3/4 px-4 mb-6 md:mb-10">
         {options.map((option) => {
           const isDisabled = disabledOptions.includes(option);
           const isCorrect = isRevealed && option === targetPokemon.name;
@@ -200,7 +202,7 @@ export default function WhosThatPokemon() {
               key={option}
               onClick={() => handleGuess(option)}
               disabled={isRevealed || isDisabled}
-              className={`capitalize py-4 px-2 rounded-xl font-bold text-[15px] shadow-lg transition-all
+              className={`capitalize py-4 md:py-6 px-2 rounded-xl font-bold text-[15px] md:text-[18px] shadow-lg transition-all
                 ${
                   isCorrect
                     ? "bg-green-500 text-white border-b-4 border-green-700"
@@ -220,15 +222,15 @@ export default function WhosThatPokemon() {
         {!isRevealed ? (
           <button
             onClick={handleFlee}
-            className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-slate-300 font-pokemon-gb text-[10px] px-6 py-4 rounded-xl shadow-lg active:scale-95 transition-transform border-b-4 border-slate-900 w-full justify-center"
+            className="flex items-center justify-center gap-2 bg-slate-700 hover:bg-slate-600 text-slate-300 font-pokemon-gb text-[10px] md:text-[12px] px-6 py-4 md:py-5 rounded-xl shadow-lg active:scale-95 transition-transform border-b-4 border-slate-900 w-full md:w-1/2 lg:w-1/3"
           >
-            <span className="text-xl">🏃‍♂️</span>
+            <span className="text-xl md:text-2xl">🏃‍♂️</span>
             FUGIR (Zera Combo)
           </button>
         ) : (
           <button
             onClick={() => setRound((prev) => prev + 1)}
-            className="w-full bg-yellow-400 text-yellow-900 font-pokemon-gb text-xs px-8 py-5 rounded-full shadow-lg active:scale-95 transition-transform animate-bounce border-b-4 border-yellow-600"
+            className="w-full md:w-1/2 lg:w-1/3 bg-yellow-400 text-yellow-900 font-pokemon-gb text-xs md:text-[14px] px-8 py-5 md:py-6 rounded-full shadow-lg active:scale-95 transition-transform animate-bounce border-b-4 border-yellow-600"
           >
             PRÓXIMO POKÉMON!
           </button>

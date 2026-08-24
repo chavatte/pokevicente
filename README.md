@@ -31,7 +31,7 @@ _____________|','   ///_/-------------/   |                 \_/_________________
 
 <div align="center">
 
-# 🎮 PokéVicente v3.1 - Trainer's Hub
+# 🎮 PokéVicente v3.2 - Trainer's Hub
 
 <img src="./public/pokevicente_splashscreen.png" alt="PokéVicente - Trainer's Hub" style="margin: 20px;">
 
@@ -51,13 +51,14 @@ A hybrid application (Web/Android) built to hunt, battle, and collect Pokémon. 
 
 ### 📖 The Project (Overview)
 
-**PokéVicente v3.1** is more than just an app; it's a classic video game experience brought to modern days. It was designed to be a fun and interactive tool where users can guess Pokémon by their silhouettes, collect up to **1025 Pokémon across all 9 generations** in a virtual backpack, bet their coins in a full turn-based RPG arena, and browse a complete encyclopedia.
+**PokéVicente v3.2** is more than just an app; it's a classic video game experience brought to modern days. It was designed to be a fun and interactive tool where users can guess Pokémon by their silhouettes, collect up to **1025 Pokémon across all 9 generations** in a virtual backpack, bet their coins in a full turn-based RPG arena, and browse a complete encyclopedia.
 
 *   **For gamers:** A complete mobile game that doesn't rely entirely on the internet for its core mechanics. You catch Pokémon, manage your MasterCoins economy, and can save your progress in a secure file so you never lose your collection!
 *   **For developers:** A high-performance *Single Page Application* (SPA) using clean architecture. It leverages custom hooks for Separation of Concerns (game engine vs. UI), state-based conditional rendering, and caches resources. It is wrapped by the Android *WebView* via Capacitor to generate a native `.apk` without relying on Android Studio.
 
 ### ✨ Features
 
+*   🖥️ **Adaptive UI & SecOps (v3.2):** Fully responsive Mobile-First design adapting seamlessly to Android, Tablets, and Desktop browsers. Includes critical security resolutions mitigating DoS and Buffer Bounds vulnerabilities on core build dependencies (Tar, Sharp, UUID).
 *   🔍 **Who's that Pokémon?:** A silhouette-guessing minigame. Guess correctly on the first try to build a **Combo** and earn bonus **MasterCoins**. Don't know it? Use the "Flee" button to protect your coins!
 *   🎒 **Backpack (Local Pokédex):** An offline inventory displaying captured Pokémon across 9 regions, their combat stats, and evolution trees.
 *   ⚔️ **Top Trumps (Arena 3.1):** A full turn-based RPG battle system! Draft a deck of 3 Pokémon and fight the CPU using Type Advantages and Critical Hits. Costs 50 MasterCoins to enter; defeat the enemy team to earn a 100-coin payout!
@@ -150,7 +151,7 @@ Um aplicativo híbrido (Web/Android) desenvolvido para caçar, batalhar e coleci
 
 ### 📖 O Projeto (Visão Geral)
 
-O **PokéVicente v3.1** não é apenas um app, é uma experiência de videogame clássico trazida para os dias de hoje. Ele foi desenhado para ser uma ferramenta divertida e interativa, onde o usuário pode adivinhar Pokémons pela silhueta, colecionar até **1025 Pokémons de todas as 9 gerações** em uma mochila virtual, apostar suas moedas em um RPG de turnos completo e consultar uma enciclopédia global.
+O **PokéVicente v3.2** não é apenas um app, é uma experiência de videogame clássico trazida para os dias de hoje. Ele foi desenhado para ser uma ferramenta divertida e interativa, onde o usuário pode adivinhar Pokémons pela silhueta, colecionar até **1025 Pokémons de todas as 9 gerações** em uma mochila virtual, apostar suas moedas em um RPG de turnos completo e consultar uma enciclopédia global.
 
 - **Para os jogadores:** É um jogo de celular completo que não precisa de internet para as mecânicas principais, onde você caça Pokémons, gerencia sua economia de MasterCoins e pode salvar seu progresso em um arquivo seguro para nunca perder sua coleção!
     
@@ -159,6 +160,8 @@ O **PokéVicente v3.1** não é apenas um app, é uma experiência de videogame 
 
 ### ✨ Funcionalidades
 
+- 🖥️ **Layout Adaptativo & SecOps (v3.2):** Design 100% responsivo construído com a filosofia Mobile-First. A interface se expande elegantemente para Monitores e Tablets sem perder a essência Arcade. A nova versão também garante uma build blindada através da mitigação manual de vulnerabilidades críticas (DoS/Buffer Bounds) em dependências nativas.
+    
 - 🔍 **Quem é esse Pokémon?:** Minigame de adivinhação. Acerte de primeira para criar um **Combo** e multiplicar suas **MasterCoins**. Não sabe qual é? Use o botão "Fugir" para proteger suas moedas (mas perder o combo).
     
 - 🎒 **Mochila (Pokédex Local):** Um inventário offline que exibe os Pokémons capturados através das 9 regiões, suas estatísticas de combate e árvores de evolução.
@@ -168,7 +171,6 @@ O **PokéVicente v3.1** não é apenas um app, é uma experiência de videogame 
 - 📚 **Poké Wiki:** Enciclopédia global com paginação virtual para consulta de dados via PokéAPI.
     
 - 💾 **Sistema de Cartucho (Save State):** Exportação e importação de progresso via arquivos exclusivos `.pkv` (Cartuchos VIP ofuscados em Base64, garantindo imutabilidade de dados local da sua Mochila e carteira de MasterCoins).
-    
 
 ### 🛠 Tecnologias e Arquitetura
 

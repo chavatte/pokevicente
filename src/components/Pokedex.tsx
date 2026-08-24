@@ -54,8 +54,8 @@ export default function Pokedex() {
 
   return (
     <>
-      <div className="w-full max-w-md flex flex-col h-full pt-6">
-        <h2 className="text-3xl text-yellow-400 font-pokemon-solid text-center mb-2 drop-shadow-md shrink-0">
+      <div className="w-full max-w-md md:max-w-full flex flex-col h-full pt-6 md:px-8">
+        <h2 className="text-3xl md:text-5xl text-yellow-400 font-pokemon-solid text-center mb-2 drop-shadow-md shrink-0">
           Pokédex
         </h2>
         <div className="text-center text-green-400 font-pokemon-gb text-[10px] mb-4 tracking-widest shrink-0">
@@ -84,7 +84,7 @@ export default function Pokedex() {
             );
           })}
         </div>
-        <div className="flex-1 grid grid-cols-3 gap-3 overflow-y-auto pb-6 px-4 scroll-smooth">
+        <div className="flex-1 grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-3 md:gap-6 overflow-y-auto pb-6 px-4 scroll-smooth">
           {allPokemon.length === 0 ? (
             <div className="col-span-3 text-center text-slate-500 font-pokemon-gb text-[10px] mt-10 animate-pulse">
               Abrindo mochila...
