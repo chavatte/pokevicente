@@ -20,7 +20,7 @@ export default function ArenaBattle({ state, actions }: any) {
   };
 
   return (
-    <div className="flex flex-col items-center w-full max-w-md h-full pt-6 px-4 animate-fade-in pb-6">
+    <div className="flex flex-col items-center w-full max-w-md md:max-w-full h-full pt-6 px-4 md:px-8 animate-fade-in pb-6">
       <style>{`
         @keyframes shake {
           0%, 100% { transform: translateX(0); }
@@ -51,7 +51,7 @@ export default function ArenaBattle({ state, actions }: any) {
         </div>
       ) : (
         <div className="flex flex-col flex-1 w-full relative">
-          <div className="flex flex-col flex-1 w-full relative bg-slate-900 rounded-3xl border-[4px] border-slate-700/80 overflow-hidden shadow-[inset_0_0_60px_rgba(0,0,0,0.9)] mb-4 pt-6 pb-2">
+          <div className="flex flex-col flex-1 w-full relative bg-slate-900 rounded-3xl border-[4px] border-slate-700/80 overflow-hidden shadow-[inset_0_0_60px_rgba(0,0,0,0.9)] mb-4 pt-6 pb-2 md:flex-row md:items-center md:justify-between md:px-6 md:py-8">
             <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
             <div className="absolute inset-0 bg-gradient-to-b from-red-900/10 via-slate-900/50 to-cyan-900/20 pointer-events-none"></div>
             <div
@@ -61,7 +61,7 @@ export default function ArenaBattle({ state, actions }: any) {
                 transformOrigin: "bottom",
               }}
             ></div>
-            <div className="relative z-10 flex flex-col items-center w-full mb-2">
+            <div className="relative z-10 flex flex-col items-center w-full mb-2 md:mb-0 md:w-[30%]">
               <div className="flex justify-between items-center w-full px-4 mb-2">
                 <span className="text-red-500 font-pokemon-gb text-[12px] drop-shadow-[0_0_5px_rgba(239,68,68,0.8)]">
                   INIMIGO
@@ -104,7 +104,7 @@ export default function ArenaBattle({ state, actions }: any) {
                 </div>
               )}
             </div>
-            <div className="relative z-10 flex-1 w-full flex flex-col items-center justify-center my-1 px-4">
+            <div className="relative z-10 flex-1 w-full flex flex-col items-center justify-center my-1 px-4 md:w-[40%] md:mx-4">
               <div
                 className={`w-full bg-slate-950/90 border-l-4 rounded-r-md p-4 relative overflow-hidden flex items-center shadow-lg transition-colors duration-300 ${
                   logSpeaker === "PLAYER"
@@ -116,7 +116,7 @@ export default function ArenaBattle({ state, actions }: any) {
               >
                 <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] pointer-events-none"></div>
                 <p
-                  className={`font-pokemon-gb text-[11px] leading-loose relative z-10 w-full text-left break-words min-h-[48px] ${
+                  className={`font-pokemon-gb text-[11px] md:text-[13px] leading-loose relative z-10 w-full text-left break-words min-h-[48px] md:min-h-[80px] ${
                     logSpeaker === "PLAYER"
                       ? "text-cyan-400"
                       : logSpeaker === "CPU"
@@ -131,7 +131,7 @@ export default function ArenaBattle({ state, actions }: any) {
                 </p>
               </div>
             </div>
-            <div className="relative z-10 flex flex-col items-center w-full mt-2 mb-4">
+            <div className="relative z-10 flex flex-col items-center w-full mt-2 mb-4 md:mt-0 md:mb-0 md:w-[30%]">
               {playerDeck[activePlayerIdx] && (
                 <div
                   className={`w-full max-w-[260px] bg-slate-950/80 border-r-4 border-cyan-500 rounded-l-xl p-3 flex flex-row-reverse items-center shadow-[0_0_20px_rgba(6,182,212,0.2)] backdrop-blur-sm mb-2 transition-all duration-300 ${playerDeck[activePlayerIdx].hp <= 0 ? "opacity-20 grayscale" : "opacity-100"} ${playerAnim}`}
@@ -175,7 +175,7 @@ export default function ArenaBattle({ state, actions }: any) {
               </div>
             </div>
           </div>
-          <div className="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 shadow-2xl mt-auto z-20 relative overflow-hidden">
+          <div className="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 shadow-2xl mt-auto z-20 relative overflow-hidden md:w-1/2 md:mx-auto">
             <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] pointer-events-none"></div>
             <div className="grid grid-cols-2 gap-4 relative z-10">
               <button

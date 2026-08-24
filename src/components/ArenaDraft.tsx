@@ -72,7 +72,7 @@ export default function ArenaDraft({ state, actions, onClose }: any) {
   });
 
   return (
-    <div className="flex flex-col items-center w-full max-w-md h-full pt-4 px-4 pb-24 overflow-y-hidden relative animate-fade-in-up">
+    <div className="flex flex-col items-center w-full max-w-md md:max-w-full h-full pt-4 px-4 pb-24 overflow-y-hidden relative animate-fade-in-up">
       <div className="relative flex flex-col items-center justify-center w-full mb-4 shrink-0 pt-2">
         <button
           onClick={onClose}
@@ -110,7 +110,7 @@ export default function ArenaDraft({ state, actions, onClose }: any) {
           </div>
         ))}
       </div>
-      <div className="flex w-full gap-4 mb-4 shrink-0 px-2">
+      <div className="flex w-full md:w-1/2 lg:w-1/3 gap-4 mb-4 shrink-0 px-2">
         <button
           onClick={handleRandomDeck}
           className="flex-1 bg-slate-800 border-2 border-purple-500 text-purple-300 font-pokemon-gb text-[9px] py-3 rounded-xl hover:bg-purple-900/50 transition-all active:scale-95 shadow-md"
@@ -145,8 +145,8 @@ export default function ArenaDraft({ state, actions, onClose }: any) {
           </p>
         </div>
       ) : (
-        <div className="w-full flex-1 overflow-y-auto pr-1 pb-16 custom-scrollbar">
-          <div className="grid grid-cols-4 gap-2 auto-rows-max">
+        <div className="w-full md:px-8 flex-1 overflow-y-auto pr-1 pb-16 custom-scrollbar">
+          <div className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-10 gap-2 md:gap-4 auto-rows-max">
             {filteredBackpack.map((id: number) => {
               const isSelected = playerHand.includes(id);
               return (
@@ -170,11 +170,11 @@ export default function ArenaDraft({ state, actions, onClose }: any) {
           </div>
         </div>
       )}
-      <div className="absolute bottom-6 w-full px-4 left-0">
+      <div className="absolute bottom-6 w-full px-4 left-0 md:flex md:justify-center pointer-events-none">
         <button
           onClick={handleStartBattle}
           disabled={playerHand.length !== 3}
-          className={`w-full py-4 rounded-2xl font-pokemon-gb text-[11px] border-b-4 transition-all duration-300 shadow-xl ${
+          className={`w-full md:w-1/2 lg:w-1/3 py-4 rounded-2xl font-pokemon-gb text-[11px] border-b-4 transition-all duration-300 shadow-xl pointer-events-auto ${
             playerHand.length === 3
               ? coins >= 50
                 ? "bg-green-600 border-green-800 text-white shadow-[0_0_20px_rgba(34,197,94,0.4)] active:scale-95 hover:bg-green-500"

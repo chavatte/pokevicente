@@ -4,38 +4,39 @@ type HelpCenterProps = {
 
 export default function HelpCenter({ onClose }: HelpCenterProps) {
   return (
-    <div className="flex flex-col w-full max-w-md h-full pt-6 px-4 pb-24 overflow-y-auto scroll-smooth animate-fade-in-up">
-      <div className="relative flex items-center justify-center mb-6">
+    <div className="flex flex-col items-center w-full max-w-md md:max-w-2xl lg:max-w-3xl h-full pt-6 px-4 md:px-8 pb-24 overflow-y-auto scroll-smooth animate-fade-in-up mx-auto">
+      <div className="relative flex items-center justify-center mb-6 md:mb-8 w-full">
         <button
           onClick={onClose}
           className="absolute left-0 text-slate-400 hover:text-white font-pokemon-gb text-2xl active:scale-90 px-2"
         >
           &lt;
         </button>
-        <h2 className="text-4xl text-yellow-400 font-pokemon-solid text-center drop-shadow-md">
+        <h2 className="text-4xl md:text-5xl text-yellow-400 font-pokemon-solid text-center drop-shadow-md">
           Manual
         </h2>
       </div>
-      <div className="space-y-4">
-        <div className="bg-slate-800 border-2 border-slate-600 rounded-2xl p-4 shadow-md">
-          <p className="text-white font-pokemon-gb text-[12px] leading-relaxed text-center">
-            Bem-vindo ao PokéVicente v3.1! Aqui você pode capturar, colecionar e
-            batalhar. Veja como funciona:
+      <div className="space-y-4 md:space-y-6 w-full">
+        <div className="bg-slate-800 border-2 border-slate-600 rounded-2xl p-4 md:p-6 shadow-md">
+          <p className="text-white font-pokemon-gb text-[12px] md:text-[14px] leading-relaxed text-center">
+            Bem-vindo ao PokéVicente v3.2! Aqui você pode capturar, colecionar e
+            batalhar. O jogo agora possui um layout adaptativo perfeito tanto
+            para Celulares quanto para Monitores largos. Veja como funciona:
           </p>
         </div>
-        <div className="bg-blue-900/50 border-2 border-blue-500 rounded-2xl p-4 shadow-md">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-3xl drop-shadow-md">🔍</span>
-            <h3 className="text-yellow-400 font-pokemon-solid text-2xl">
+        <div className="bg-blue-900/50 border-2 border-blue-500 rounded-2xl p-4 md:p-6 shadow-md">
+          <div className="flex items-center gap-3 mb-2 md:mb-4">
+            <span className="text-3xl md:text-4xl drop-shadow-md">🔍</span>
+            <h3 className="text-yellow-400 font-pokemon-solid text-2xl md:text-3xl">
               Quem é esse?
             </h3>
           </div>
-          <p className="text-blue-100 font-pokemon-gb text-[12px] leading-relaxed mb-3">
+          <p className="text-blue-100 font-pokemon-gb text-[12px] md:text-[13px] leading-relaxed mb-3 md:mb-4">
             Olhe a sombra e adivinhe o nome. Acertar de primeira rende mais{" "}
             <span className="text-yellow-400 font-bold">MasterCoins (🪙)</span>{" "}
             e inicia um <strong>Combo</strong>!
           </p>
-          <ul className="text-blue-200 font-pokemon-gb text-[10px] leading-relaxed space-y-2 ml-2 border-l-2 border-blue-400 pl-3">
+          <ul className="text-blue-200 font-pokemon-gb text-[10px] md:text-[12px] leading-relaxed space-y-2 md:space-y-3 ml-2 border-l-2 border-blue-400 pl-3 md:pl-4">
             <li>🔥 Acertos de 1ª dão bônus de Combo!</li>
             <li>❌ Errar 3 vezes no mesmo Pokémon faz você perder moedas.</li>
             <li>
@@ -43,30 +44,30 @@ export default function HelpCenter({ onClose }: HelpCenterProps) {
             </li>
           </ul>
         </div>
-        <div className="bg-green-900/50 border-2 border-green-500 rounded-2xl p-4 shadow-md">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-3xl drop-shadow-md">🎒</span>
-            <h3 className="text-yellow-400 font-pokemon-solid text-2xl">
+        <div className="bg-green-900/50 border-2 border-green-500 rounded-2xl p-4 md:p-6 shadow-md">
+          <div className="flex items-center gap-3 mb-2 md:mb-4">
+            <span className="text-3xl md:text-4xl drop-shadow-md">🎒</span>
+            <h3 className="text-yellow-400 font-pokemon-solid text-2xl md:text-3xl">
               Mochila
             </h3>
           </div>
-          <p className="text-green-100 font-pokemon-gb text-[12px] leading-relaxed">
+          <p className="text-green-100 font-pokemon-gb text-[12px] md:text-[13px] leading-relaxed">
             Sua coleção! Aqui ficam todos os Pokémons que você capturou. Clique
             neles para ver as barras de poder e as evoluções.
           </p>
         </div>
-        <div className="bg-red-900/50 border-2 border-red-500 rounded-2xl p-4 shadow-md">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-3xl drop-shadow-md">⚔️</span>
-            <h3 className="text-yellow-400 font-pokemon-solid text-2xl leading-none pt-2">
+        <div className="bg-red-900/50 border-2 border-red-500 rounded-2xl p-4 md:p-6 shadow-md">
+          <div className="flex items-center gap-3 mb-2 md:mb-4">
+            <span className="text-3xl md:text-4xl drop-shadow-md">⚔️</span>
+            <h3 className="text-yellow-400 font-pokemon-solid text-2xl md:text-3xl leading-none pt-2">
               Arena Super Trunfo
             </h3>
           </div>
-          <p className="text-red-100 font-pokemon-gb text-[12px] leading-relaxed mb-3 mt-2">
+          <p className="text-red-100 font-pokemon-gb text-[12px] md:text-[13px] leading-relaxed mb-3 md:mt-2 md:mb-4">
             O combate de turnos! Escolha 3 Pokémons da sua Mochila para formar o
             seu time e desafie a Inteligência Artificial.
           </p>
-          <ul className="text-red-200 font-pokemon-gb text-[10px] leading-relaxed space-y-3 ml-2 border-l-2 border-red-400 pl-3">
+          <ul className="text-red-200 font-pokemon-gb text-[10px] md:text-[12px] leading-relaxed space-y-3 ml-2 border-l-2 border-red-400 pl-3 md:pl-4">
             <li>
               💥 <strong>Tática:</strong> Água apaga Fogo, Fogo queima Planta!
               Ataques no tipo certo (Super Efetivo) dão dano em dobro.
@@ -85,26 +86,26 @@ export default function HelpCenter({ onClose }: HelpCenterProps) {
             </li>
           </ul>
         </div>
-        <div className="bg-purple-900/50 border-2 border-purple-500 rounded-2xl p-4 shadow-md">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-3xl drop-shadow-md">📖</span>
-            <h3 className="text-yellow-400 font-pokemon-solid text-2xl">
+        <div className="bg-purple-900/50 border-2 border-purple-500 rounded-2xl p-4 md:p-6 shadow-md">
+          <div className="flex items-center gap-3 mb-2 md:mb-4">
+            <span className="text-3xl md:text-4xl drop-shadow-md">📖</span>
+            <h3 className="text-yellow-400 font-pokemon-solid text-2xl md:text-3xl">
               PokéWiki
             </h3>
           </div>
-          <p className="text-purple-100 font-pokemon-gb text-[12px] leading-relaxed">
+          <p className="text-purple-100 font-pokemon-gb text-[12px] md:text-[13px] leading-relaxed">
             A enciclopédia completa. Pesquise qualquer Pokémon do mundo por nome
             ou número para aprender tudo sobre ele.
           </p>
         </div>
-        <div className="bg-orange-900/50 border-2 border-orange-500 rounded-2xl p-4 shadow-md">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-3xl drop-shadow-md">💾</span>
-            <h3 className="text-yellow-400 font-pokemon-solid text-2xl">
+        <div className="bg-orange-900/50 border-2 border-orange-500 rounded-2xl p-4 md:p-6 shadow-md">
+          <div className="flex items-center gap-3 mb-2 md:mb-4">
+            <span className="text-3xl md:text-4xl drop-shadow-md">💾</span>
+            <h3 className="text-yellow-400 font-pokemon-solid text-2xl md:text-3xl">
               Cartucho .PKV
             </h3>
           </div>
-          <p className="text-orange-100 font-pokemon-gb text-[12px] leading-relaxed">
+          <p className="text-orange-100 font-pokemon-gb text-[12px] md:text-[13px] leading-relaxed">
             Não perca o seu progresso! No menu principal, clique em "
             <strong>EXPORTAR</strong>" para criar o seu Cartucho VIP (um arquivo
             seguro com final <strong>.pkv</strong>) que guarda seus Pokémons e
@@ -112,12 +113,14 @@ export default function HelpCenter({ onClose }: HelpCenterProps) {
             em "<strong>IMPORTAR</strong>" e selecionar o seu cartucho!
           </p>
         </div>
-        <button
-          onClick={onClose}
-          className="w-full mt-6 bg-yellow-400 text-yellow-900 font-pokemon-gb text-[15px] px-6 py-4 rounded-full shadow-lg border-b-4 border-yellow-600 active:scale-95 transition-all hover:bg-yellow-300 animate-bounce"
-        >
-          ENTENDI! BORA JOGAR
-        </button>
+        <div className="w-full flex justify-center pt-4 md:pt-6">
+          <button
+            onClick={onClose}
+            className="w-full md:w-2/3 lg:w-1/2 bg-yellow-400 text-yellow-900 font-pokemon-gb text-[15px] md:text-[18px] px-6 py-4 md:py-5 rounded-full shadow-lg border-b-4 border-yellow-600 active:scale-95 transition-all hover:bg-yellow-300 animate-bounce"
+          >
+            ENTENDI! BORA JOGAR
+          </button>
+        </div>
       </div>
     </div>
   );

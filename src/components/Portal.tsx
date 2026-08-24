@@ -66,7 +66,7 @@ export default function Portal({ onNavigate }: PortalProps) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-start h-full w-full max-w-md px-5 pt-8 pb-24 overflow-y-auto scroll-smooth">
+    <div className="flex flex-col items-center justify-start h-full w-full max-w-md md:max-w-full px-5 pt-8 pb-24 overflow-y-auto scroll-smooth">
       <div className="flex flex-col items-center mb-6 relative w-full shrink-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-slate-800 border-2 border-yellow-500 text-yellow-400 px-4 py-2 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.5)] z-50 flex items-center justify-center font-pokemon-gb text-[16px] whitespace-nowrap">
           💰 MasterCoins: {saveData.score}
@@ -86,20 +86,20 @@ export default function Portal({ onNavigate }: PortalProps) {
           alt="Mestre Vicente"
           className="w-40 h-auto mt-20 drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)] hover:scale-105 transition-transform duration-500 z-10"
         />
-        <div className="flex flex-col items-center bg-slate-800/90 px-8 py-4 rounded-3xl border-4 border-slate-600 shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-md -mt-20 z-20">
+        <div className="flex flex-col items-center bg-slate-800/90 px-8 md:px-12 py-4 md:py-6 rounded-3xl border-4 border-slate-600 shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-md -mt-20 z-20">
           <img
             src="/pokevicente_logo.png"
             alt="Logo PokéVicente"
-            className="w-56 h-auto drop-shadow-md mb-1"
+            className="w-56 md:w-80 lg:w-96 h-auto drop-shadow-md mb-1 md:mb-3 transition-all duration-500"
           />
-          <p className="text-white font-pokemon-gb text-[12px] mt-2 tracking-widest opacity-90 text-center">
+          <p className="text-white font-pokemon-gb text-[12px] md:text-[14px] mt-2 tracking-widest opacity-90 text-center">
             CENTRAL DO TREINADOR
           </p>
         </div>
       </div>
-      <div className="w-full bg-slate-900/80 border-l-4 border-cyan-500 rounded-r-2xl p-5 mb-6 shadow-[0_0_15px_rgba(6,182,212,0.2)] relative overflow-hidden shrink-0 animate-fade-in">
+      <div className="w-full md:w-3/4 lg:w-2/3 bg-slate-900/80 border-l-4 border-cyan-500 rounded-r-2xl p-5 mb-6 shadow-[0_0_15px_rgba(6,182,212,0.2)] relative overflow-hidden shrink-0 animate-fade-in">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] pointer-events-none"></div>
-        <p className="text-cyan-100 font-pokemon-gb text-[12px] leading-loose text-center relative z-10">
+        <p className="text-cyan-100 font-pokemon-gb text-[12px] md:text-[14px] leading-loose text-center relative z-10">
           <span className="text-cyan-400 animate-pulse">
             CONEXÃO ESTABELECIDA.{" "}
           </span>
@@ -108,21 +108,21 @@ export default function Portal({ onNavigate }: PortalProps) {
           verdadeiro Mestre Pokémon!
         </p>
       </div>
-      <div className="flex flex-col w-full gap-4 shrink-0">
+      <div className="flex flex-col md:grid md:grid-cols-2 w-full md:w-3/4 lg:w-2/3 gap-4 md:gap-6 shrink-0">
         <button
           onClick={() => onNavigate("pokedex")}
           className="relative bg-green-600 border-b-8 border-green-800 text-white p-5 rounded-2xl shadow-xl active:scale-95 transition-all overflow-hidden group flex items-center justify-between"
         >
           <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
           <div className="flex flex-col text-left">
-            <span className="block font-pokemon-solid text-xl text-yellow-400 drop-shadow-md mb-2">
+            <span className="block font-pokemon-solid text-xl md:text-2xl text-yellow-400 drop-shadow-md mb-2">
               Mochila
             </span>
-            <span className="font-pokemon-gb text-[10px] text-green-200">
+            <span className="font-pokemon-gb text-[10px] md:text-[12px] text-green-200">
               Sua coleção local!
             </span>
           </div>
-          <span className="text-3xl opacity-80 group-hover:scale-125 transition-transform">
+          <span className="text-3xl md:text-4xl opacity-80 group-hover:scale-125 transition-transform">
             🎒
           </span>
         </button>
@@ -132,14 +132,14 @@ export default function Portal({ onNavigate }: PortalProps) {
         >
           <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
           <div className="flex flex-col text-left">
-            <span className="block font-pokemon-solid text-xl text-yellow-400 drop-shadow-md mb-2">
+            <span className="block font-pokemon-solid text-xl md:text-2xl text-yellow-400 drop-shadow-md mb-2">
               Quem é esse?
             </span>
-            <span className="font-pokemon-gb text-[10px] text-blue-200">
+            <span className="font-pokemon-gb text-[10px] md:text-[12px] text-blue-200">
               Adivinhe a silhueta!
             </span>
           </div>
-          <span className="text-3xl opacity-80 group-hover:scale-125 transition-transform">
+          <span className="text-3xl md:text-4xl opacity-80 group-hover:scale-125 transition-transform">
             🔍
           </span>
         </button>
@@ -149,14 +149,14 @@ export default function Portal({ onNavigate }: PortalProps) {
         >
           <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
           <div className="flex flex-col text-left">
-            <span className="block font-pokemon-solid text-xl text-yellow-400 drop-shadow-md mb-2">
+            <span className="block font-pokemon-solid text-xl md:text-2xl text-yellow-400 drop-shadow-md mb-2">
               Super Trunfo
             </span>
-            <span className="font-pokemon-gb text-[10px] text-red-200">
+            <span className="font-pokemon-gb text-[10px] md:text-[12px] text-red-200">
               Batalha na Arena!
             </span>
           </div>
-          <span className="text-3xl opacity-80 group-hover:scale-125 transition-transform">
+          <span className="text-3xl md:text-4xl opacity-80 group-hover:scale-125 transition-transform">
             ⚔️
           </span>
         </button>
@@ -166,44 +166,44 @@ export default function Portal({ onNavigate }: PortalProps) {
         >
           <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
           <div className="flex flex-col text-left">
-            <span className="block font-pokemon-solid text-xl text-yellow-400 drop-shadow-md mb-2">
+            <span className="block font-pokemon-solid text-xl md:text-2xl text-yellow-400 drop-shadow-md mb-2">
               PokéWiki
             </span>
-            <span className="font-pokemon-gb text-[10px] text-purple-200">
+            <span className="font-pokemon-gb text-[10px] md:text-[12px] text-purple-200">
               Enciclopédia Completa
             </span>
           </div>
-          <span className="text-3xl opacity-80 group-hover:scale-125 transition-transform">
+          <span className="text-3xl md:text-4xl opacity-80 group-hover:scale-125 transition-transform">
             📖
           </span>
         </button>
       </div>
-      <div className="mt-8 bg-slate-800/80 border-2 border-slate-600 rounded-2xl p-5 w-full shadow-md relative overflow-hidden shrink-0">
+      <div className="mt-8 md:mt-12 md:w-3/4 lg:w-1/2 bg-slate-800/80 border-2 border-slate-600 rounded-2xl p-5 w-full shadow-md relative overflow-hidden shrink-0">
         <img
           src="/pokevicente_logo.png"
           alt="Cartucho"
           className="absolute -right-6 -bottom-6 w-32 h-auto opacity-10 rotate-[-15deg] pointer-events-none"
         />
         <div className="flex items-center justify-center gap-2 mb-4">
-          <span className="text-2xl">💾</span>
-          <h3 className="text-yellow-400 font-pokemon-solid text-xl text-center">
+          <span className="text-2xl md:text-3xl">💾</span>
+          <h3 className="text-yellow-400 font-pokemon-solid text-xl md:text-2xl text-center">
             Cartucho .PKV
           </h3>
         </div>
-        <p className="text-slate-300 font-pokemon-gb text-[10px] text-center mb-5 leading-relaxed z-10 relative">
+        <p className="text-slate-300 font-pokemon-gb text-[10px] md:text-[12px] text-center mb-5 leading-relaxed z-10 relative">
           Seus dados estão protegidos no formato exclusivo PokéVicente! Salve
           antes de trocar de celular.
         </p>
         <div className="flex gap-4 z-10 relative">
           <button
             onClick={handleExportSave}
-            className="flex-1 bg-blue-600 hover:bg-blue-500 text-white font-pokemon-gb text-[11px] py-4 rounded-xl border-b-4 border-blue-800 active:scale-95 transition-transform flex flex-col items-center gap-2 shadow-lg"
+            className="flex-1 bg-blue-600 hover:bg-blue-500 text-white font-pokemon-gb text-[11px] md:text-[13px] py-4 rounded-xl border-b-4 border-blue-800 active:scale-95 transition-transform flex flex-col items-center gap-2 shadow-lg"
           >
-            <span className="text-xl">📥</span>
+            <span className="text-xl md:text-2xl">📥</span>
             EXPORTAR
           </button>
-          <label className="flex-1 bg-green-600 hover:bg-green-500 text-white font-pokemon-gb text-[11px] py-4 rounded-xl border-b-4 border-green-800 active:scale-95 transition-transform flex flex-col items-center gap-2 shadow-lg cursor-pointer">
-            <span className="text-xl">📤</span>
+          <label className="flex-1 bg-green-600 hover:bg-green-500 text-white font-pokemon-gb text-[11px] md:text-[13px] py-4 rounded-xl border-b-4 border-green-800 active:scale-95 transition-transform flex flex-col items-center gap-2 shadow-lg cursor-pointer">
+            <span className="text-xl md:text-2xl">📤</span>
             IMPORTAR
             <input
               type="file"
@@ -216,9 +216,9 @@ export default function Portal({ onNavigate }: PortalProps) {
       </div>
       <button
         onClick={() => onNavigate("about")}
-        className="mt-8 mb-4 px-6 py-3 bg-slate-800/80 border-2 border-slate-600 rounded-full text-slate-200 font-pokemon-gb text-[10px] shadow-[0_0_10px_rgba(0,0,0,0.3)] backdrop-blur-md hover:bg-slate-700 hover:border-yellow-500 hover:text-yellow-400 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] transition-all active:scale-95 shrink-0"
+        className="mt-8 mb-4 px-6 py-3 bg-slate-800/80 border-2 border-slate-600 rounded-full text-slate-200 font-pokemon-gb text-[10px] md:text-[12px] shadow-[0_0_10px_rgba(0,0,0,0.3)] backdrop-blur-md hover:bg-slate-700 hover:border-yellow-500 hover:text-yellow-400 transition-all active:scale-95 shrink-0"
       >
-        PokéVicente v3.1 • Sobre o Projeto
+        PokéVicente v3.2 • Sobre o Projeto
       </button>
     </div>
   );
