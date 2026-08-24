@@ -45,7 +45,7 @@ export default function SplashScreen() {
           style={{ animationDuration: "8s" }}
         />
         <span className="mt-4 bg-blue-600/80 border border-blue-400 text-white font-pokemon-gb text-[10px] px-4 py-2 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]">
-          VERSÃO 2.5
+          VERSÃO 3.1
         </span>
       </div>
       <div className="absolute bottom-8 flex flex-col items-center w-full px-12 z-10">

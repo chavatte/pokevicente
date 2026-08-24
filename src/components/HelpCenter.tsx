@@ -18,8 +18,8 @@ export default function HelpCenter({ onClose }: HelpCenterProps) {
       </div>
       <div className="space-y-4">
         <div className="bg-slate-800 border-2 border-slate-600 rounded-2xl p-4 shadow-md">
-          <p className="text-white font-pokemon-gb text-[14px] leading-relaxed text-center">
-            Bem-vindo ao PokéVicente! Aqui você pode capturar, colecionar e
+          <p className="text-white font-pokemon-gb text-[12px] leading-relaxed text-center">
+            Bem-vindo ao PokéVicente v3.1! Aqui você pode capturar, colecionar e
             batalhar. Veja como funciona:
           </p>
         </div>
@@ -58,24 +58,30 @@ export default function HelpCenter({ onClose }: HelpCenterProps) {
         <div className="bg-red-900/50 border-2 border-red-500 rounded-2xl p-4 shadow-md">
           <div className="flex items-center gap-3 mb-2">
             <span className="text-3xl drop-shadow-md">⚔️</span>
-            <h3 className="text-yellow-400 font-pokemon-solid text-2xl">
-              Super Trunfo
+            <h3 className="text-yellow-400 font-pokemon-solid text-2xl leading-none pt-2">
+              Arena Super Trunfo
             </h3>
           </div>
-          <p className="text-red-100 font-pokemon-gb text-[12px] leading-relaxed mb-3">
-            A arena de aposta! Escolha um lutador da Mochila. O jogo sorteia um
-            atributo para a batalha.
+          <p className="text-red-100 font-pokemon-gb text-[12px] leading-relaxed mb-3 mt-2">
+            O combate de turnos! Escolha 3 Pokémons da sua Mochila para formar o
+            seu time e desafie a Inteligência Artificial.
           </p>
-          <ul className="text-red-200 font-pokemon-gb text-[10px] leading-relaxed space-y-2 ml-2 border-l-2 border-red-400 pl-3">
+          <ul className="text-red-200 font-pokemon-gb text-[10px] leading-relaxed space-y-3 ml-2 border-l-2 border-red-400 pl-3">
             <li>
-              🏆 <strong>Vitória:</strong> Ganhe +20 MasterCoins.
+              💥 <strong>Tática:</strong> Água apaga Fogo, Fogo queima Planta!
+              Ataques no tipo certo (Super Efetivo) dão dano em dobro.
             </li>
             <li>
-              💀 <strong>Derrota:</strong> Perca -15 MasterCoins.
+              🔥 <strong>Impacto Crítico:</strong> Todo ataque tem 15% de chance
+              de causar um dano brutal e inesperado.
             </li>
             <li>
-              💸 <strong>Atenção:</strong> É preciso ter no mínimo 1 MasterCoin
-              para entrar na Arena!
+              💸 <strong>Ingresso:</strong> Custa 50 MasterCoins para abrir as
+              portas da Arena.
+            </li>
+            <li>
+              🏆 <strong>Vitória Máxima:</strong> Derrote as 3 cartas do Inimigo
+              e saia de lá com 100 MasterCoins (+50 de lucro)!
             </li>
           </ul>
         </div>

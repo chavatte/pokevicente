@@ -1,3 +1,28 @@
+<pre style="font-size: 0.5rem;">
+
+                              \\\\\\
+                           \\\\\\\\\\\\
+                          \\\\\\\\\\\\\\\
+-------------,-|           |C>   // )\\\\|    .o88b. db   db  .d8b.  db    db  .d8b.  d888888b d888888b d88888b
+           ,','|          /    || ,'/////|   d8P  Y8 88   88 d8' '8b 88    88 d8' '8b '~~88~~' '~~88~~' 88'  
+---------,','  |         (,    ||   /////    8P      88ooo88 88ooo88 Y8    8P 88ooo88    88       88    88ooooo 
+         ||    |          \\  ||||//''''|    8b      88~~~88 88~~~88 '8b  d8' 88~~~88    88       88    88~~~~~ 
+         ||    |           |||||||     _|    Y8b  d8 88   88 88   88  '8bd8'  88   88    88       88    88.   
+         ||    |______      ''''\____/ \      'Y88P' YP   YP YP   YP    YP    YP   YP    YP       YP    Y88888P
+         ||    |     ,|         _/_____/ \
+         ||  ,'    ,' |        /          |                 ___________________________________________
+         ||,'    ,'   |       |         \  |              / \                                           \ 
+_________|/    ,'     |      /           | |             |  |                                            | 
+_____________,'      ,',_____|      |    | |              \ |      chavatte@duck.com                     | 
+             |     ,','      |      |    | |                |                       chavatte.vercel.app  | 
+             |   ,','    ____|_____/    /  |                |    ________________________________________|___
+             | ,','  __/ |             /   |                |  /                                            /
+_____________|','   ///_/-------------/   |                 \_/____________________________________________/ 
+              |===========,'                                                                                  
+			  
+
+</pre>
+
 <div align="center">
   <a href="#-english-version">🇺🇸 English</a> | <a href="#-versão-em-português">🇧🇷 Português</a>
 </div>
@@ -6,7 +31,7 @@
 
 <div align="center">
 
-# 🎮 PokéVicente v2.5 - Trainer's Hub
+# 🎮 PokéVicente v3.1 - Trainer's Hub
 
 <img src="./public/pokevicente_splashscreen.png" alt="PokéVicente - Trainer's Hub" style="margin: 20px;">
 
@@ -26,16 +51,16 @@ A hybrid application (Web/Android) built to hunt, battle, and collect Pokémon. 
 
 ### 📖 The Project (Overview)
 
-**PokéVicente v2.5** is more than just an app; it's a classic video game experience brought to modern days. It was designed to be a fun and interactive tool where users can guess Pokémon by their silhouettes, collect up to **1025 Pokémon across all 9 generations** in a virtual backpack, bet their coins in a "Top Trumps" arena, and browse a complete encyclopedia.
+**PokéVicente v3.1** is more than just an app; it's a classic video game experience brought to modern days. It was designed to be a fun and interactive tool where users can guess Pokémon by their silhouettes, collect up to **1025 Pokémon across all 9 generations** in a virtual backpack, bet their coins in a full turn-based RPG arena, and browse a complete encyclopedia.
 
 *   **For gamers:** A complete mobile game that doesn't rely entirely on the internet for its core mechanics. You catch Pokémon, manage your MasterCoins economy, and can save your progress in a secure file so you never lose your collection!
-*   **For developers:** A high-performance *Single Page Application* (SPA). It uses state-based conditional rendering for navigation (avoiding complex routing libraries) and caches resources. It is wrapped by the Android *WebView* via Capacitor to generate a native `.apk` without relying on Android Studio.
+*   **For developers:** A high-performance *Single Page Application* (SPA) using clean architecture. It leverages custom hooks for Separation of Concerns (game engine vs. UI), state-based conditional rendering, and caches resources. It is wrapped by the Android *WebView* via Capacitor to generate a native `.apk` without relying on Android Studio.
 
 ### ✨ Features
 
 *   🔍 **Who's that Pokémon?:** A silhouette-guessing minigame. Guess correctly on the first try to build a **Combo** and earn bonus **MasterCoins**. Don't know it? Use the "Flee" button to protect your coins!
 *   🎒 **Backpack (Local Pokédex):** An offline inventory displaying captured Pokémon across 9 regions, their combat stats, and evolution trees.
-*   ⚔️ **Top Trumps (Arena):** A betting battle system against the CPU (AI). It requires MasterCoins to enter; win to multiply your coins, or lose and take the hit!
+*   ⚔️ **Top Trumps (Arena 3.1):** A full turn-based RPG battle system! Draft a deck of 3 Pokémon and fight the CPU using Type Advantages and Critical Hits. Costs 50 MasterCoins to enter; defeat the enemy team to earn a 100-coin payout!
 *   📚 **Poké Wiki:** A global encyclopedia with virtual pagination for querying data via PokéAPI.
 *   💾 **Cartridge System (Save State):** Export and import progress via custom `.pkv` files (Base64 encrypted VIP cartridges ensuring local data immutability for your Pokédex and MasterCoins wallet).
 
@@ -44,6 +69,7 @@ A hybrid application (Web/Android) built to hunt, battle, and collect Pokémon. 
 Built with the cutting-edge of the front-end ecosystem:
 
 *   **Core:** React 19 + TypeScript.
+*   **Architecture:** Separation of Concerns (Custom Hooks engine + UI subcomponents).
 *   **Build Tool & Dev Server:** Vite 8 (Ultra-fast, with HMR).
 *   **Styling:** Tailwind CSS v4 (Built-in, responsive Design System).
 *   **Native Bridge:** Capacitor 8 (Communication bridge between Web and native Android APIs).
@@ -124,11 +150,11 @@ Um aplicativo híbrido (Web/Android) desenvolvido para caçar, batalhar e coleci
 
 ### 📖 O Projeto (Visão Geral)
 
-O **PokéVicente v2.5** não é apenas um app, é uma experiência de videogame clássico trazida para os dias de hoje. Ele foi desenhado para ser uma ferramenta divertida e interativa, onde o usuário pode adivinhar Pokémons pela silhueta, colecionar até **1025 Pokémons de todas as 9 gerações** em uma mochila virtual, apostar suas moedas em uma arena de "Super Trunfo" e consultar uma enciclopédia completa.
+O **PokéVicente v3.1** não é apenas um app, é uma experiência de videogame clássico trazida para os dias de hoje. Ele foi desenhado para ser uma ferramenta divertida e interativa, onde o usuário pode adivinhar Pokémons pela silhueta, colecionar até **1025 Pokémons de todas as 9 gerações** em uma mochila virtual, apostar suas moedas em um RPG de turnos completo e consultar uma enciclopédia global.
 
 - **Para os jogadores:** É um jogo de celular completo que não precisa de internet para as mecânicas principais, onde você caça Pokémons, gerencia sua economia de MasterCoins e pode salvar seu progresso em um arquivo seguro para nunca perder sua coleção!
     
-- **Para os desenvolvedores:** É uma _Single Page Application_ (SPA) de alta performance. Utiliza renderização condicional baseada em estado para navegação (sem bibliotecas complexas de roteamento) e faz o cache de recursos, sendo envelopada pela _WebView_ do Android via Capacitor para gerar um `.apk` nativo sem depender do Android Studio.
+- **Para os desenvolvedores:** É uma _Single Page Application_ (SPA) de alta performance focada em Arquitetura Limpa. Utiliza _Custom Hooks_ para isolar regras de negócio, renderização condicional baseada em estado para navegação e faz o cache de recursos, sendo envelopada pela _WebView_ do Android via Capacitor para gerar um `.apk` nativo sem depender do Android Studio.
     
 
 ### ✨ Funcionalidades
@@ -137,7 +163,7 @@ O **PokéVicente v2.5** não é apenas um app, é uma experiência de videogame 
     
 - 🎒 **Mochila (Pokédex Local):** Um inventário offline que exibe os Pokémons capturados através das 9 regiões, suas estatísticas de combate e árvores de evolução.
     
-- ⚔️ **Super Trunfo (Arena):** Sistema de batalha com apostas contra a CPU. Exige MasterCoins para participar; vença para lucrar, ou perca e sofra o prejuízo financeiro!
+- ⚔️ **Super Trunfo (Arena 3.1):** Um RPG de turnos completo! Monte um deck com 3 Pokémons, use Vantagens de Tipo (Água apaga Fogo) e Acertos Críticos. O ingresso custa 50 MasterCoins: vença o time inimigo para faturar 100 moedas!
     
 - 📚 **Poké Wiki:** Enciclopédia global com paginação virtual para consulta de dados via PokéAPI.
     
@@ -149,6 +175,8 @@ O **PokéVicente v2.5** não é apenas um app, é uma experiência de videogame 
 O projeto foi construído com o que há de mais moderno no ecossistema front-end:
 
 - **Core:** React 19 + TypeScript.
+    
+- **Arquitetura:** Separação de Responsabilidades (_Custom Hooks_ para o motor do jogo e Subcomponentes visuais).
     
 - **Build Tool & Dev Server:** Vite 8 (Ultra-rápido, com Hot Module Replacement).
     
